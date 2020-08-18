@@ -1,0 +1,383 @@
+{
+	"info": {
+		"_postman_id": "3675994f-af38-44a8-8fa0-44729f65d3a2",
+		"name": "Ubuntu Server",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "PING",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000",
+					"host": [
+						"localhost"
+					],
+					"port": "3000"
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User Login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"user_name\": \"tarun\",\n    \"password\": \"123123\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/api/users/login",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"users",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get single users",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyTmFtZSI6InRhcnVuIiwidXNlcklkIjoiNWU0NzE2MTJkZmJmYjhjZGFlYTk2YTRkIiwiaWF0IjoxNTgxNzE3MTcyLCJleHAiOjE2MTMyNzQ3NzJ9.RKpm5twE6t-nMupIXz-nT2J6BREiRI3gJ-bcxvRMI1E",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:3000/api/users/5e4724cd353bd0d2a3ce844e",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"users",
+						"5e4724cd353bd0d2a3ce844e"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Users",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyTmFtZSI6InRhcnVuIiwidXNlcklkIjoiNWU0NzE2MTJkZmJmYjhjZGFlYTk2YTRkIiwiaWF0IjoxNTgxNzE3MTcyLCJleHAiOjE2MTMyNzQ3NzJ9.RKpm5twE6t-nMupIXz-nT2J6BREiRI3gJ-bcxvRMI1E",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "localhost:3000/api/users",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add new user",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "user_name",
+							"value": "tarun",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "123123",
+							"type": "text"
+						}
+					],
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/users/",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update User",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "{{TOKEN}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "[\n    {\n        \"propName\": \"email\",\n        \"value\": \"admin@asd.com\"\n    }\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/users/5e3918ccb10c46425a3106fd",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users",
+						"5e3918ccb10c46425a3106fd"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete single users",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{TOKEN}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:3000/users/5e3943cfacbf3948b75f54f9",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users",
+						"5e3943cfacbf3948b75f54f9"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "All Folders",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyTmFtZSI6InRhcnVuIiwidXNlcklkIjoiNWU0NzE2MTJkZmJmYjhjZGFlYTk2YTRkIiwiaWF0IjoxNTgxNzE4ODA0LCJleHAiOjE2MTMyNzY0MDR9.JlGHUU5vwgetyBxrQWCo3Qqob6YAnEoit2wwnebsSK8"
+					},
+					{
+						"key": "Content-Type",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyTmFtZSI6InRhcnVuIiwidXNlcklkIjoiNWU0NzE2MTJkZmJmYjhjZGFlYTk2YTRkIiwiaWF0IjoxNTgxNzE4ODA0LCJleHAiOjE2MTMyNzY0MDR9.JlGHUU5vwgetyBxrQWCo3Qqob6YAnEoit2wwnebsSK8"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"folder_name\": \"New Folder 4\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/api/users/5e4724cd353bd0d2a3ce844e/folders",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"users",
+						"5e4724cd353bd0d2a3ce844e",
+						"folders"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add new Folder",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyTmFtZSI6InRhcnVuIiwidXNlcklkIjoiNWU0NzE2MTJkZmJmYjhjZGFlYTk2YTRkIiwiaWF0IjoxNTgxNzE4ODA0LCJleHAiOjE2MTMyNzY0MDR9.JlGHUU5vwgetyBxrQWCo3Qqob6YAnEoit2wwnebsSK8"
+					},
+					{
+						"key": "Content-Type",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyTmFtZSI6InRhcnVuIiwidXNlcklkIjoiNWU0NzE2MTJkZmJmYjhjZGFlYTk2YTRkIiwiaWF0IjoxNTgxNzE4ODA0LCJleHAiOjE2MTMyNzY0MDR9.JlGHUU5vwgetyBxrQWCo3Qqob6YAnEoit2wwnebsSK8"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"folder_name\": \"tarun1\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/api/users/5e4724cd353bd0d2a3ce844e/folder/",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"users",
+						"5e4724cd353bd0d2a3ce844e",
+						"folder",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Folder",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyTmFtZSI6InRhcnVuIiwidXNlcklkIjoiNWU0NzE2MTJkZmJmYjhjZGFlYTk2YTRkIiwiaWF0IjoxNTgxNzE4ODA0LCJleHAiOjE2MTMyNzY0MDR9.JlGHUU5vwgetyBxrQWCo3Qqob6YAnEoit2wwnebsSK8"
+					},
+					{
+						"key": "Content-Type",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyTmFtZSI6InRhcnVuIiwidXNlcklkIjoiNWU0NzE2MTJkZmJmYjhjZGFlYTk2YTRkIiwiaWF0IjoxNTgxNzE4ODA0LCJleHAiOjE2MTMyNzY0MDR9.JlGHUU5vwgetyBxrQWCo3Qqob6YAnEoit2wwnebsSK8"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"folder_name\": \"New Folder 3\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/api/users/5e4724cd353bd0d2a3ce844e/folder/tarun",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"users",
+						"5e4724cd353bd0d2a3ce844e",
+						"folder",
+						"tarun"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "87040b30-dee0-4ed5-b07b-ee438ebb1d5d",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "1ae15c33-92b3-43aa-af48-43ddd3ec4de1",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "71f6102a-e91e-41e9-b49e-ca7998026453",
+			"key": "TOKEN",
+			"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyTmFtZSI6InRhcnVuIiwidXNlcklkIjoiNWU0NzE2MTJkZmJmYjhjZGFlYTk2YTRkIiwiaWF0IjoxNTgxNzE3MTcyLCJleHAiOjE2MTMyNzQ3NzJ9.RKpm5twE6t-nMupIXz-nT2J6BREiRI3gJ-bcxvRMI1E",
+			"type": "string"
+		}
+	],
+	"protocolProfileBehavior": {}
+}
